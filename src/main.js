@@ -56,8 +56,7 @@ function handleSubmit(e) {
                     message: 'Sorry, there are no images matching your search query. Please try again!',
                 });
             }
-            console.log(data)
-
+            
             container.innerHTML = createMarkup(data.hits);
             lightbox.refresh();
         })
