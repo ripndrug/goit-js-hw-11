@@ -61,7 +61,7 @@ function handleSubmit(e) {
             container.innerHTML = createMarkup(data.hits);
             lightbox.refresh();
         })
-        .catch(error => console.log(error))
+        .catch(error => container.insertAdjacentHTML('beforeend', "<li class='stats-title'>Error! Try searching another keyword</li>"))
         .finally(() => {
             loader.remove();
             e.target.reset()
