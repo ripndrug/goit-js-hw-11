@@ -60,7 +60,9 @@ function handleSubmit(e) {
             container.innerHTML = createMarkup(data.hits);
             lightbox.refresh();
         })
-        .catch(error => container.insertAdjacentHTML('beforeend', "<li class='stats-title'>Error! Try searching another keyword</li>"))
+        .catch(error => iziToast.error({
+                    message: 'Sorry, there are no images matching your search query. Please try again!',
+                }))
         .finally(() => {
             loader.remove();
             e.target.reset()
